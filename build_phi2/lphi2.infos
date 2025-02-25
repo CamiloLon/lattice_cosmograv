@@ -1,0 +1,42 @@
+Parameters: 
+Important parameters:
+
+                tMax       1e6                 
+                  dt       1                   
+         tOutputFreq       dt*10               
+               lSide       1.4/0.511e-5        
+                   N       120                 
+             withGWs       false               
+             evolver       VV2                 
+           expansion       true                
+       tOutputInfreq       dt*20               
+                  t0       0                   
+     tOutputRareFreq       1000                
+             kCutOff       inf                 
+
+
+Other parameters:
+
+           tolerance       -1                  
+       print_headers       false               
+       appendToFiles       false               
+     GWprojectorType       1                   
+     fixedBackground       false               
+     initial_momenta       -0.8152*0.511e-5    
+         tOutputVerb       dt*10               
+         hdf5Spectra       false               
+          outputfile       ./                  
+            baseSeed       1234                
+             PS_type       2                   
+               input       ../src/models/parameter-files/lphi2.in
+          PS_version       1                   
+  initial_amplitudes       14.5                
+               gamma       0.51e-5             
+         tBackupFreq       -1                  
+     energy_snapshot       ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖
+             OccNumb       false               
+    spectraVerbosity       0                   
+           deltaKBin       1                   
+
+The simulation started on the d12 m2 y2025 around h15m56.
+It will be running on a grid of (6,1,1) cores.

@@ -1,0 +1,184 @@
+\documentclass{article}
+
+% % Language setting
+% % Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% % Set page size and margins
+% % Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% % Useful packages
+\usepackage{amsmath}
+% \usepackage{graphicx}
+% \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+% \usepackage{xcolor}
+
+\begin{document}
+\title{Cosmological Lattice Simulations}
+\author{Camilo Londoño Vera}
+\date{\today}
+\maketitle
+
+% \begin{abstract}
+%     Abstract
+% \end{abstract}
+
+
+\section{Unit systems}
+\label{sec:introduction}
+For doing the calculations, one can choose multiple unit systems. Gallego uses $\hbar=c=8\pi G=1$, making the reduced Planck mass equal to one: $m_p=\frac{1}{\sqrt{8\pi}}M_p=\sqrt{\dfrac{\hbar c}{8\pi G}}=1$ (in CosmoLattice notation). In CosmoLattice, it is used $\hbar=c=1$, whitout fixing $G$, then the reduced Planck mass is: $m_p=\dfrac{M_p}{\sqrt{8\pi}}=\dfrac{1}{\sqrt{8\pi G}}$. In the user manual, they stablish that $M_p\approx1.22\times10^{19}\text{GeV}_{nat.}$, $m_p\approx2.44\times10^{18}\text{GeV}_{nat.}$, in SI units, $\text{GeV}_{nat.}$ must be read GeV/c$^2$. This is the value that we will use for the Planck mass, for now.
+\begin{center}
+    
+\begin{tabular}{c} 
+    \textbf{Geometrical Units}\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        
+        \hline
+        $m_p$ & $M_p$ & $G$ & $\hbar$ & $c$ & $t_p$ & $l_p$ & $E_p$ \\
+        \hline
+        1 & $\sqrt{8\pi}$ & $\dfrac{1}{8\pi}$ & 1 & 1 & $\dfrac{1}{m_p}$ & $m_p$ & $m_p$ \\
+        \hline
+    \end{tabular}
+\end{tabular}
+
+\end{center}
+
+
+The diference between these systems is that in CosmoLattice units the mass dimensions are not one, then every mass in Gallego's work (or equivalently energy, and frequency) must be multiplied by $m_p$ to get CosmoLattice dimensions.
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Natural Units} & \textbf{Geometrical Units} \\
+    \textbf{(CosmoLattice)} & \textbf{(Gallego)} \\
+    \hline
+    $c=\hbar=1$ & $c=\hbar=8\pi G=1$ \\
+    \hline
+    $m_p=\dfrac{1}{\sqrt{8\pi G}}$ & $m_p=1$ \\
+    \hline
+    $M_p=\sqrt{8\pi}m_p$ & $M_p=\sqrt{8\pi}$ \\
+    \hline
+    $L=T=M^{-1}$ & $L=T=M^{-1}=L^{-1}$ \\
+    \hline
+\end{tabular}
+\end{center}
+The last cell is explained as follows:
+$$G = [L]^3[T]^{-2}[M]^{-1} \underset{c=1}{=} [L][M]^{-1}\underset{\hbar=1}{=}[L]^2\underset{8\pi G=1}{=}1$$
+
+
+
+\vspace{0.25cm}
+
+
+
+\vspace{0.25cm}
+\begin{center}
+    
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \# & \textbf{SI} & \textbf{Natural Units}& \textbf{Geometrical Units} \\ & & \textbf{(CosmoLattice)} & \textbf{(Gallego)} \\
+    \hline
+    c & $2.99\times10^8$m/s & 1 & 1 \\
+    \hline
+    $\hbar$ & $1.05\times10^{-34}$ J$\cdot$s & 1 & 1 \\
+    \hline
+    $m_p$ & $4.34\times10^{-9}$ kg & $\dfrac{1}{\sqrt{8\pi G}}$ & 1 \\
+    & & $=2.44\times10^{18}$ GeV& \\
+    \hline
+    $M_p$ & $2.18\times10^{-8}$ kg & $\sqrt{8\pi}m_p=\dfrac{1}{\sqrt G}$ & $\sqrt{8\pi}$ \\
+    & & $=1.22\times10^{19}$ GeV& \\
+    \hline
+    G & $6.67\times10^{-11}$ m$^3/$kg$\cdot$s$^2$ & $\dfrac{1}{{M_p}^2}$ & $\dfrac{1}{8\pi}$ \\
+    & & $=6.71\times10^{-39}$ GeV$^{-2}$ &\\
+    \hline
+    $t_p$ & $5.39\times10^{-44}$ s & $\sqrt G=\dfrac{1}{M_p}=\dfrac{1}{\sqrt{8\pi} m_p}$ & $\dfrac{1}{\sqrt{8\pi}}$ \\
+    \hline
+    $l_p$ & $1.61\times10^{-35}$ m& $\sqrt{G}$& $\dfrac{1}{\sqrt{8\pi}}$ \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.25cm}
+
+This tells us that everytime we see a magnitude that is supposed to be in mass (or energy, or frequency) units, we must multiply it by $m_p$ to get the CosmoLattice value, and everytime we see a magnitude that is supposed to be in time (or distance) units we must divide it by $m_p$ . For example, the reduced Planck mass in Gallego's work is $m_p=1$, then in CosmoLattice units it is $m_p=2.44\times10^{18}$ GeV. The Planck mass goes from $M_p=\sqrt{8\pi}$, to $M_p=\sqrt{8\pi}m_p$. The Planck time goes from $t_p=\dfrac{1}{\sqrt{8\pi}}$, to $t_p=\dfrac{1}{\sqrt{8\pi}m_p}$.
+
+\textbf{Lagrangian}
+
+The Lagrangian density for the scalar field is given by:
+\begin{equation}
+    \mathcal{L}=\dfrac{1}{2}\partial_\mu\phi\partial^\mu\phi-\gamma\phi^2
+\end{equation}
+where $\gamma$ is the squared mass of the scalar field. Such that the action is:
+\begin{equation}
+    S=\int d^4x\mathcal{L}
+\end{equation}
+
+The action in natural units is adimensional, and $\text{d}x^4$ has dimensions of $[L]^4$, then the Lagrangian density must have dimensions of $[L]^{-4}$ or $[M]^4$. The kinetic term has dimensions of $[L]^{-4}$, then the field must have dimensions of $[L]^{-1}$ or $[M]$, and the mass term must have dimensions of $[L]^{-4}$, such that $\gamma$ has dimensions of $[L]^{-2}$. The mass of the scalar field in geometrical units is $\sqrt{\gamma}$, then the mass of the scalar field in natural units is $\sqrt{\gamma}m_p$. Furthermore, the field in geometrical units is $\phi$, then in natural units is $\phi m_p$. 
+% The action in geometrical units is:
+% \begin{equation}
+%     S=\int d^4x\left(\dfrac{1}{2}\partial_\mu\phi\partial^\mu\phi-\gamma\phi^2\right)
+% \end{equation}
+\vspace{0.25cm}
+
+\textbf{Momenta}
+
+The momentum $k^\mu$ has units of mass (frequency, or $[L]^{-1}$). Anytime we encounter a momentum in Gallego's work, we must multiply it by $m_p$ to get the CosmoLattice value.  The momentum in geometrical units is $k^\mu$, then in natural units is $m_p k^\mu$. In Gallego's work, Mpc$^{-1}$ are used to treat momenta, converting this is of our concern. 1 Mpc is:
+$$1 \text{ Mpc}=3.086\times10^{22} \text m$$
+which under the previous logic, transforms to Natural units when dividing by $l_{p}=\sqrt{\hbar G/c^3}$, to make it adimensional, and dividing by $E_p=\sqrt{\hbar c^5/G}$ for taking it to GeV$^{-1}$ units. In natural units, this is the same as dividing by 1:
+
+\begin{align*}  
+1 \text{ Mpc}\rightarrow \frac{1 \text{ Mpc}}{l_p E_p} = \frac{1 \text{ Mpc}}{\hbar c} = 1.56\times10^{38}\text{GeV}_{nat.}^{-1} &= 1 \text{ Mpc}_{nat.}\\
+& = l_{p_{nat}}\text{Mpc}_{geo.} = \frac{1}{m_{p_{nat}}}\text{Mpc}_{geo.}
+\end{align*}
+Given that in geometrical units, everything is adimensional, the factor between this two is the Planck length in natural units $l_{p_{nat}}$, for going from adimensional to length, but following the logic explained in the previous table, its enough to add a factor of $m_{p_{nat}}$:
+\begin{align*}
+    1\text{ Mpc}^{-1}_{geo.} = \frac{1}{m_{p_{nat.}}\text{Mpc}_{nat.}}=2.63\times10^{-57}
+\end{align*}
+% Finally, for converting from geometrical Mpc to natural GeV$^{-1}$, simply divide by $m_p$ the above result.
+% \begin{align*}
+%     1 \text{ Mpc}_{nat.} &= \frac{1}{m_p}\text{ Mpc}_{geo.}\\
+%     &= \frac{1}{m_p} 6.155\times10^{21}=\frac{1}{2.44\times10^{18}}6.155\times10^{21}\text{ GeV}^{-1}_{nat.}\\
+%     &=2522.541\text{ GeV}^{-1}_{nat.}\\
+%     \Rightarrow\text{ Mpc}_{geo.}&=2522.541m_p\text{ GeV}^{-1}_{nat.}
+% \end{align*}
+
+% Then, for momentum units, every value given in Mpc$_{geo.}^{-1}$ must be divided by 2552.541 and multiplied by $m_p$, i.e.:
+% $$1 \text{ Mpc}^{-1}_{geo.}=9.673\times10^{14}\text{ GeV}_{nat.}$$
+
+\textbf{Initial conditions}
+
+In CosmoLattice, it is necessary to specify the initial conditions for the fields and their momenta. The idea is to reproduce Gallego's work in CosmoLattice, so we are going to take his initial conditions and convert them to (natural) CosmoLattice units. The initial conditions for the fields are $\phi_i$ and $\dot{\phi}_i$, then in natural units are $m_p\phi_i$ and $m_p^2\dot{\phi}_i$. Let's ilustrate the conversion on the following table:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Geometrical Units} & \textbf{Natural Units}\\ \textbf{(Gallego)} & \textbf{(CosmoLattice)}\\
+    \hline
+    $\phi_i$ & $m_p \phi_i$ \\
+    =16.0257 & $=m_p\cdot16.0257=3.91027\times10^{19}$ GeV\\
+    \hline
+    $\dot{\phi}_i$ & $m_p^2 \dot{\phi}_i$ \\
+    $=-4.58536\times10^{-6}$&$=-2.72994\times10^{31}$ GeV$^2$\\
+    \hline
+    $\gamma$ & $m_p^2\gamma$ \\
+    $=1.57692\times10^{-11}$ & $=9.38834\times10^{25}$ GeV$^2$\\
+    \hline
+    $k_0$ & ${m_p}{\text{MPc}_{geo.}} k_0$ \\
+    =0.00113 Mpc$^{-1}$ &$=1.048\times10^{72}$ GeV\\
+    
+    \hline
+\end{tabular}
+\end{center}
+
+$k_0$ is the minimum value of the modes, ideally in CosmoLattice would translate as $k_{IR}$, the infrared cutoff, which is associated with the length of the lattice "squares".  This has been omitted as far.
+
+Gallego calculates $\dot{\phi}_i$ as
+$$\dot{\phi}_i=\frac{-2 \sqrt{A_s}\hspace{0.05cm}{m_p}^4 n^2 \pi}{{\phi_i}^2}$$
+with $m_p=1$, $n=2$ the power of the potential and $A_s=2.19\times10^{-9}$ the scalar amplitude, which converges to the value in the table when we do
+$$\dot{\phi}_{i_{nat}}=\frac{-2 \sqrt{A_s}\hspace{0.05cm}{m_p}^4 n^2 \pi}{{m_p}^2{\phi_i}^2}={m_p}^2\dot{\phi}_{i_{geo}}$$
+
+$\gamma$ is calculated as 
+$$\gamma=12A_s{m_p}^6n^2\pi^2{\phi_i}^{-2-n}$$
+which converges to the value in the table analogously.
+\end{document}

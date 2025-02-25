@@ -1,0 +1,82 @@
+16/08/24
+
+animation phi2 v001:
+    alpha=1
+    2da derivada comentada
+    masses2S establecido como 2*gamma
+    unidades no ajustadas
+    H0 no establecido
+    kIR = 0.01
+    N=40
+    dt=0.01
+    gamma=9e-14
+
+alpha = 0:
+    corrió
+    animation phi2 v002
+    parece cubrir menos evolución
+
+kIR = 1:
+    Apareció una feature en k=4
+    alpha=1:
+        La feature se mantiene pero parece haber llegado a un estado más estacionario
+
+kIR=0.8
+    La feature se mantiene
+    La escala de k es similar, no vi bien el máximo
+
+kIR=0.09:
+    La feature se fue, el k máximo es de ~3
+kIR=0.5
+    Otra vez feature en 4, el máximo en k es casi 11
+kIR=0.2
+    Otra vez pero el máximo está por 7
+kIR=0.1
+    desapareció la feature
+    animation phi2 v003
+
+Por alguna razón el comportamiento es muy similar al esperado pero con una inversión en el eje x
+Establezco kIR=0.1 y procedo a aumentar el N
+N=100:
+    Apareció un feature :( otra vez por la misma parte (curioso). Procedo a investigar por qué se da eso
+    animation phi2 v004
+
+24/08/24
+
+alpha=0
+animation phi2 v005
+
+2/08/24
+
+alpha=1
+masses2S = {4* pow<2>(gamma)}
+
+04/09/2024
+
+Cambio de unidades:
+phi_0 (phi_i) = 1.309e-4
+phi_0_dot = 5.3977e27
+H0 = 2.3579e13
+gamma = 9.9796e-11
+As (solo .nb) = 2.6874e-4
+
+29/09/2024
+El anterior cambio de unidades está malo
+
+No se puede comparar si la escogencia de masses2S es correcta por la vble no recibe funciones y la
+función no recibe constantes.
+
+02/12/24
+Con omegaStar *100 se cayó después de eta = 300, a=311, phi seguía constante phi' llegó a 10^-4. Específicamente, en otra simulación con mayor precisión de impresión, se llega a eta=370, a=3991, phi'=1.6e-3.      Con omegaStar *1000 llegó a 138562.299684044 (Ne=9.9) en 386 segundos, pero H tiene valores muy extravagantes, empieza sobre 5, se va a 0 y vuelve a 5
+
+Con omegaStar normal, el avance del factor de escala es muy lento
+
+Las anteriores modificaciones del omegaStar estaban malas porque no cambié el kIR de máquina, de manera
+que no estaba en los momenta adecuados. Ahora haciendo omegaStar*1e3 y kIR*1e-3 se llegó hasta casi 6 e-folds
+y eta= 23400, (a=304). El espectro no muestra mejoría, solo parece desplazarse hacia el 0. Esta vez el cambio
+de H fue de tan solo 0.012, lo cual es bueno. La conservación de la energía se disparó en el último paso.
+El dt fue de 10
+
+Haciendo lo mismo pero con 1e5, el espectro cambia mucho menos. También se dispara todo en el último paso,
+pero en menor medida. Por ejemplo, H pasa de menos de 0.01 a 0.05. a=206 máx. La conservción de la energía
+sube a 0.12, antes era de 1. Datos guardados en 001

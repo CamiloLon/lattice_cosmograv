@@ -1,0 +1,1 @@
+/usr/bin/c++   -DNOMPI -DNOPFFT -DNOFFTFLOAT  -DMODELTYPE=lphi2_exp -DMODELINCLUDE=models/lphi2_exp.h -DMODELLABEL=lphi2_exp -Ofast  -Wall -Wshadow  -rdynamic CMakeFiles/cosmolattice.dir/src/cosmolattice.cpp.o -o lphi2_exp  -lfftw3_threads -lfftw3 

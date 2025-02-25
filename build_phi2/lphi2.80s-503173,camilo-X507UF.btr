@@ -1,0 +1,15 @@
+
+lphi2:503173 terminated with signal 6 at PC=73592c2969fc SP=7ffe950fbf50.  Backtrace:
+/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x73592c2969fc]
+/lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x73592c242476]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x73592c2287f3]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xa2b9e)[0x73592c6a2b9e]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xae20c)[0x73592c6ae20c]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xae277)[0x73592c6ae277]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xae4d8)[0x73592c6ae4d8]
+./lphi2(_ZN7TempLat13MemoryToolBox24checkParallelConsistencyEv+0x803)[0x61bf032d4e63]
+./lphi2(_ZN7TempLat13MemoryToolBoxC1ENS_17MPICartesianGroupESt6vectorIlSaIlEEllb+0x98b)[0x61bf032dd04b]
+./lphi2(main+0x6d8)[0x61bf03298408]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x73592c229d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x73592c229e40]
+./lphi2(_start+0x25)[0x61bf0329c465]

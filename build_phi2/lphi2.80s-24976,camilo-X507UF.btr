@@ -1,0 +1,14 @@
+
+lphi2:24976 terminated with signal 6 at PC=7428c76969fc SP=7ffc95758640.  Backtrace:
+/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7428c76969fc]
+/lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7428c7642476]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7428c76287f3]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xa2b9e)[0x7428c7aa2b9e]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xae20c)[0x7428c7aae20c]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xae277)[0x7428c7aae277]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xae4d8)[0x7428c7aae4d8]
+./lphi2(_ZN7TempLat13RunParametersIdEC2ERNS_15ParameterParserE+0x2e0d)[0x5851a70127cd]
+./lphi2(main+0x237)[0x5851a6fbaf67]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7428c7629d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7428c7629e40]
+./lphi2(_start+0x25)[0x5851a6fbf465]

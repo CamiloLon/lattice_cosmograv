@@ -1,0 +1,47 @@
+Parameters: 
+Important parameters:
+
+                tMax       300                 
+                  dt       0.01                
+                   N       30                  
+             withGWs       false               
+             evolver       VV2                 
+           expansion       true                
+       tOutputInfreq       1                   
+                  t0       0                   
+     tOutputRareFreq       10                  
+                 kIR       4                   
+         tOutputFreq       0.1                 
+             kCutOff       inf                 
+
+
+Other parameters:
+
+           tolerance       -1                  
+       print_headers       false               
+           deltaKBin       1                   
+             OccNumb       false               
+    spectraVerbosity       0                   
+     fixedBackground       false               
+         hdf5Spectra       false               
+                phi0       -2                  
+     initial_momenta       -4.86735e30         
+       appendToFiles       false               
+               sigma       5e-4                
+     GWprojectorType       1                   
+          outputfile       ./                  
+              lambda       1e-14               
+            baseSeed       2979554423          
+             PS_type       1                   
+               input       ../src/models/parameter-files/lphi2_exp.in
+  initial_amplitudes       5.6964e18           
+         tBackupFreq       -1                  
+          PS_version       1                   
+               gamma       9e-14               
+         tOutputVerb       1                   
+     energy_snapshot       ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖
+
+The simulation started on the d20 m11 y2024 around h3m22.
+It will be running on a grid of (1,1,1) cores.The simulation finished on the d20 m11 y2024 around h3m22.
+The timer indicates that it ran for 35.388s.
+As it ran on 1 cores, this corresponds to 0.00983 core hours.

@@ -1,0 +1,21 @@
+Revisar los valores de 
+    initial_amplitudes = 5.6964e18 0  # homogeneous amplitudes in GeV
+    initial_momenta = -4.86735e30 0   # homogeneous amplitudes in GeV2
+
+Probar el modelo default con q=0
+
+Entender el output de spectra_scalar_0, leer la documentación
+    por qué hay un bloque para cada tiempo? ** (Importante) **
+    cómo aumentar el tamaño de los bloques? (cambiar kIR (el paso) no hizo nada)
+
+Aprender la conversión de unidades Mp² = G = 1 --> c = h/2pi = 1 (link de stack de Enea)
+
+Entender el archivo lphi4.in
+    Qué es #Spectra options
+    kCutOff = 0 implies initially vanishing fluctuations.
+    ingresar H0
+
+Revisar que delta eta / delta x = 1/sqrt(3) (sí)
+
+Entender el apéndice B de Caravano
+Poner  las gráficas en unidades físicas

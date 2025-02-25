@@ -1,0 +1,4 @@
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_phiexp/CMakeFiles/cosmolattice.dir
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_phiexp/CMakeFiles/clean-cmake.dir
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_phiexp/CMakeFiles/edit_cache.dir
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_phiexp/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,44 @@
+Parameters: 
+Important parameters:
+
+                tMax       1e6                 
+                  dt       100                 
+                   N       126                 
+             withGWs       false               
+             evolver       VV2                 
+           expansion       true                
+       tOutputInfreq       dt*20               
+                  t0       0                   
+     tOutputRareFreq       100000              
+                 kIR       0.537e-5            
+         tOutputFreq       dt*10               
+             kCutOff       inf                 
+
+
+Other parameters:
+
+           tolerance       -1                  
+       print_headers       false               
+       appendToFiles       false               
+     GWprojectorType       1                   
+     fixedBackground       false               
+     initial_momenta       -1.014435e+13       
+         tOutputVerb       dt*10               
+         hdf5Spectra       false               
+          outputfile       ./                  
+            baseSeed       1234                
+             PS_type       1                   
+               input       ../src/models/parameter-files/lphi2.in
+          PS_version       1                   
+  initial_amplitudes       3.538000e+19        
+         tBackupFreq       -1                  
+               gamma       2.601e-11           
+     energy_snapshot       ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖ ✖
+             OccNumb       false               
+    spectraVerbosity       0                   
+           deltaKBin       1                   
+
+The simulation started on the d3 m12 y2024 around h16m30.
+It will be running on a grid of (6,1,1) cores.The simulation finished on the d3 m12 y2024 around h16m35.
+The timer indicates that it ran for 289.317s.
+As it ran on 6 cores, this corresponds to 0.482195 core hours.

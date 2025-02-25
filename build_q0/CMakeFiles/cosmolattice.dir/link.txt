@@ -1,0 +1,1 @@
+/usr/bin/c++   -DNOMPI -DNOPFFT -DNOFFTFLOAT  -DMODELTYPE=old_lphi4 -DMODELINCLUDE=models/old_lphi4.h -DMODELLABEL=old_lphi4 -Ofast  -Wall -Wshadow  -rdynamic CMakeFiles/cosmolattice.dir/src/cosmolattice.cpp.o -o old_lphi4  -lfftw3_threads -lfftw3 
