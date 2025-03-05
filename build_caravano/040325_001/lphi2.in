@@ -1,0 +1,55 @@
+#Output
+outputfile = ./
+
+#Evolution
+expansion = true
+evolver = VV2
+
+#Lattice
+N = 132
+dt = 0.1
+lSide = 274509.8039215686 #1.4/m
+
+#Times
+tOutputFreq = 0.1
+tOutputInfreq = 1
+tOutputVerb = 1
+
+tMax = 10000
+t0 = 0
+
+#Spectra options
+PS_type = 2
+PS_version = 1
+
+#GWs
+GWprojectorType = 1
+withGWs = false
+
+#IC
+initial_amplitudes = 14.5
+initial_momenta= -4.1565e-06 #-0.815*m
+baseSeed = 1234
+
+#Model Parameters
+gamma =  2.601e-11 #m**2
+
+
+######################################################
+
+# kCutOff = 3.687e-04
+
+# Originales del ejemplo lphi4:
+#initial_amplitudes = 5.6964e18 # homogeneous amplitudes in GeV
+#initial_momenta = -4.86735e30 # homogeneous amplitudes in GeV2
+#gamma = 9e-14 
+
+# Valores directos de Alexander:
+#initial_amplitudes = 16.0257  # homogeneous amplitudes in GeV
+#initial_momenta = -4.58536e-6  # homogeneous amplitudes in GeV2
+#gamma = 1.57692e-11
+
+# Cambio a geometricas:
+#initial_amplitudes = 3.91027e19  # homogeneous amplitudes in GeV
+#initial_momenta = -2.72994e31   # homogeneous amplitudes in GeV2
+#gamma = 9.38834e25

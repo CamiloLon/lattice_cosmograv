@@ -1,0 +1,4 @@
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_caravano/CMakeFiles/cosmolattice.dir
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_caravano/CMakeFiles/clean-cmake.dir
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_caravano/CMakeFiles/edit_cache.dir
+/home/camilo/CAMILOL/UDEA/cosmolattice/build_caravano/CMakeFiles/rebuild_cache.dir

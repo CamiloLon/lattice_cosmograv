@@ -1,0 +1,1 @@
+/usr/bin/mpicxx   -DNOPFFT -DNOFFTFLOAT  -DMODELTYPE=lphi2 -DMODELINCLUDE=models/lphi2.h -DMODELLABEL=lphi2 -Ofast  -Wall -Wshadow  -rdynamic CMakeFiles/cosmolattice.dir/src/cosmolattice.cpp.o -o lphi2  -lmpichcxx -lmpich ../dependencies/MyFFTW3/lib/libfftw3_threads.a ../dependencies/MyFFTW3/lib/libfftw3_mpi.a ../dependencies/MyFFTW3/lib/libfftw3.a 
