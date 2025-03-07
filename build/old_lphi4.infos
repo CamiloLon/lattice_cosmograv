@@ -28,7 +28,7 @@ Other parameters:
                    q       100                 
           outputfile       ./                  
               lambda       9e-14               
-            baseSeed       1713954142          
+            baseSeed       1203444721          
              PS_type       1                   
                input       ../src/models/parameter-files/old_lphi4.in
   initial_amplitudes       5.6964e18 0         
@@ -39,7 +39,5 @@ Other parameters:
              OccNumb       false               
     spectraVerbosity       0                   
 
-The simulation started on the d24 m11 y2024 around h24m39.
-It will be running on a grid of (4,1,1) cores.The simulation finished on the d24 m11 y2024 around h24m39.
-The timer indicates that it ran for 28.734s.
-As it ran on 4 cores, this corresponds to 0.0319267 core hours.
+The simulation started on the d5 m3 y2025 around h21m22.
+It will be running on a grid of (4,1,1) cores.
